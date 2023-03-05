@@ -2,8 +2,6 @@ package com.my_api.exchange.model;
 
 import jakarta.persistence.*;
 import lombok.*;
-import org.springframework.data.annotation.CreatedDate;
-import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import java.time.LocalDate;
 
@@ -13,15 +11,15 @@ import java.time.LocalDate;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-@MappedSuperclass
-@EntityListeners(value = AuditingEntityListener.class)
 public class Exchange {
     @Id
-    private String id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
     @ManyToOne
-    @Column(nullable = false)
+    @JoinColumn(name = "currency_id", nullable = false)
     private Currency currency;
+    @Column(nullable = false)
     private Float change;
-    @CreatedDate
+    @Column(nullable = false)
     private LocalDate date;
 }
