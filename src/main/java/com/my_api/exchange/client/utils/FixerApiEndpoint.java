@@ -2,19 +2,20 @@ package com.my_api.exchange.client.utils;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import org.springframework.beans.factory.annotation.Value;
 
 @Getter
 @NoArgsConstructor
 public class FixerApiEndpoint {
-    @Value("${base.url}")
-    private static String baseUrl;
+    private static String baseUrl = "https://api.apilayer.com/fixer";
 
     public static String symbols() {
         return baseUrl + "/symbols";
     }
 
-    public static String latest() {
+    public static String latest(String base) {
+        if (base != null) {
+            return baseUrl + "/latest" + "?base=" + base;
+        }
         return baseUrl + "/latest";
     }
 }
