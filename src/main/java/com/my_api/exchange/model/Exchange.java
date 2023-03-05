@@ -21,6 +21,7 @@ public class Exchange {
     @ManyToOne
     @Column(nullable = false)
     private Currency currency;
+    private Float change;
     @CreatedDate
     private LocalDate date;
 }
