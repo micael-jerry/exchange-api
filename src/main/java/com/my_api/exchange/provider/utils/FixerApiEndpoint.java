@@ -1,4 +1,4 @@
-package com.my_api.exchange.client.utils;
+package com.my_api.exchange.provider.utils;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;

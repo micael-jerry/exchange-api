@@ -1,7 +1,7 @@
-package com.my_api.exchange.client.service;
+package com.my_api.exchange.provider.service;
 
-import com.my_api.exchange.client.model.Latest;
-import com.my_api.exchange.client.model.Symbols;
+import com.my_api.exchange.provider.model.Latest;
+import com.my_api.exchange.provider.model.Symbols;
 import lombok.NoArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpEntity;
@@ -10,8 +10,8 @@ import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestTemplate;
 
-import static com.my_api.exchange.client.utils.FixerApiEndpoint.latest;
-import static com.my_api.exchange.client.utils.FixerApiEndpoint.symbols;
+import static com.my_api.exchange.provider.utils.FixerApiEndpoint.latest;
+import static com.my_api.exchange.provider.utils.FixerApiEndpoint.symbols;
 
 @org.springframework.stereotype.Service
 @NoArgsConstructor

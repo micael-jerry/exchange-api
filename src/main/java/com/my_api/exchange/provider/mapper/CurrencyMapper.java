@@ -1,6 +1,6 @@
-package com.my_api.exchange.client.mapper;
+package com.my_api.exchange.provider.mapper;
 
-import com.my_api.exchange.client.model.Symbols;
+import com.my_api.exchange.provider.model.Symbols;
 import com.my_api.exchange.model.Currency;
 import org.springframework.stereotype.Component;
 

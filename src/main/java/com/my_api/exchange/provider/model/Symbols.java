@@ -1,4 +1,4 @@
-package com.my_api.exchange.client.model;
+package com.my_api.exchange.provider.model;
 
 import lombok.*;
 

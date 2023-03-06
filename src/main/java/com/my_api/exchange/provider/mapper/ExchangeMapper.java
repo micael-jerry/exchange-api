@@ -1,6 +1,6 @@
-package com.my_api.exchange.client.mapper;
+package com.my_api.exchange.provider.mapper;
 
-import com.my_api.exchange.client.model.Latest;
+import com.my_api.exchange.provider.model.Latest;
 import com.my_api.exchange.model.Currency;
 import com.my_api.exchange.model.Exchange;
 import com.my_api.exchange.repository.CurrencyRepository;
