@@ -15,7 +15,7 @@ import static com.my_api.exchange.provider.utils.FixerApiEndpoint.symbols;
 
 @org.springframework.stereotype.Service
 @NoArgsConstructor
-public class Service {
+public class ProviderService {
     @Value("${api.key}")
     private String apiKey;
 
