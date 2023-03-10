@@ -14,7 +14,7 @@ import java.util.Map;
 
 @Component
 @AllArgsConstructor
-public class ExchangeMapper {
+public class ExchangeProviderMapper {
     private CurrencyRepository currencyRepository;
 
     public List<Exchange> toDomain(Latest latest) {
