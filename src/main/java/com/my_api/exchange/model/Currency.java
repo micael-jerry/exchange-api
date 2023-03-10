@@ -17,7 +17,7 @@ public class Currency {
     private Integer id;
     @Column(name = "symbol", nullable = false, length = 3, unique = true)
     private String symbol;
-    @Column(name = "value", nullable = false, unique = true)
+    @Column(name = "value", nullable = false)
     private String value;
     @OneToMany(mappedBy = "currency")
     private List<Exchange> exchanges;
