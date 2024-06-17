@@ -6,16 +6,16 @@ import lombok.NoArgsConstructor;
 @Getter
 @NoArgsConstructor
 public class FixerApiEndpoint {
-    private static String baseUrl = "https://api.apilayer.com/fixer";
+    private static final String BASE_URL = "https://api.apilayer.com/fixer";
 
     public static String symbols() {
-        return baseUrl + "/symbols";
+        return BASE_URL + "/symbols";
     }
 
     public static String latest(String base) {
         if (base != null) {
-            return baseUrl + "/latest" + "?base=" + base;
+            return BASE_URL + "/latest" + "?base=" + base;
         }
-        return baseUrl + "/latest";
+        return BASE_URL + "/latest";
     }
 }

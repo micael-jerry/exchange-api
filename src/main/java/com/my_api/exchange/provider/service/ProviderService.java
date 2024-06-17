@@ -8,16 +8,17 @@ import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 import static com.my_api.exchange.provider.utils.FixerApiEndpoint.latest;
 import static com.my_api.exchange.provider.utils.FixerApiEndpoint.symbols;
 
-@org.springframework.stereotype.Service
+@Service
 @NoArgsConstructor
 public class ProviderService {
     @Value("${api.key}")
-    private String apiKey;
+    private String API_KEY;
 
     public Symbols getSymbols() {
         RestTemplate restTemplate = new RestTemplate();
@@ -49,7 +50,7 @@ public class ProviderService {
 
     private HttpHeaders headers() {
         HttpHeaders headers = new HttpHeaders();
-        headers.set("apikey", apiKey);
+        headers.set("apikey", API_KEY);
         return headers;
     }
 }

@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Map;
 
 @Component
-public class CurrencyMapper {
+public class CurrencyProviderMapper {
     public List<Currency> toDomain(Symbols symbols) {
         List<Currency> currencyList = new ArrayList<>();
         for (Map.Entry<String, String> entry : symbols.getSymbols().entrySet()) {

@@ -6,6 +6,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.time.LocalDate;
+
 @Getter
 @Setter
 @Builder
@@ -13,5 +15,6 @@ import lombok.Setter;
 @NoArgsConstructor
 public class ExchangeDto {
     private CurrencyDto currency;
+    private LocalDate date;
     private Float change;
 }

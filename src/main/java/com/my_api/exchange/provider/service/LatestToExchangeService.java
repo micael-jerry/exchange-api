@@ -2,7 +2,7 @@ package com.my_api.exchange.provider.service;
 
 import com.my_api.exchange.Service.ExchangeService;
 import com.my_api.exchange.model.Exchange;
-import com.my_api.exchange.provider.mapper.ExchangeMapper;
+import com.my_api.exchange.provider.mapper.ExchangeProviderMapper;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -13,11 +13,11 @@ import java.util.List;
 public class LatestToExchangeService {
     private ProviderService providerService;
     private ExchangeService exchangeService;
-    private ExchangeMapper exchangeMapper;
+    private ExchangeProviderMapper exchangeProviderMapper;
 
     public List<Exchange> saveExchangeFromProvider() {
         String base = "USD";
-        List<Exchange> exchangeList = exchangeMapper
+        List<Exchange> exchangeList = exchangeProviderMapper
                 .toDomain(
                         providerService.getLatest(base)
                 );
