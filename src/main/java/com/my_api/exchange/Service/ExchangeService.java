@@ -21,11 +21,11 @@ public class ExchangeService {
     }
 
     public List<Exchange> findAllByDate(String dateString) {
-        if (dateString.matches("^\\d{4}-\\d{2}-\\d{2}$")) {
-            return exchangeRepository.findAllByDate(LocalDate.parse(dateString));
+        if (Objects.equals("latest", dateString)) {
+            return exchangeRepository.findAllByDate(LocalDate.now());
         }
-        else if (Objects.equals("latest", dateString)) {
-            exchangeRepository.findAllByDate(LocalDate.now());
+        else if (dateString.matches("^\\d{4}-\\d{2}-\\d{2}$")) {
+            return exchangeRepository.findAllByDate(LocalDate.parse(dateString));
         }
         throw new RuntimeException("Invalid date format");
     }

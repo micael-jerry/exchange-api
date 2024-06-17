@@ -13,6 +13,7 @@ public class ExchangeMapper {
     public ExchangeDto toRest(Exchange exchange) {
         return ExchangeDto.builder()
                 .currency(currencyMapper.toRest(exchange.getCurrency()))
+                .date(exchange.getDate())
                 .change(exchange.getChange())
                 .build();
     }
