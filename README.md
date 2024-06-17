@@ -1,6 +1,8 @@
 # EXCHANGE
 
-> **Currency conversion API**
+## Description
+
+> **Currency conversion API:** This application allows you to retrieve and view exchange rates from the initial startup of the application up to the present moment.
 
 _Build with Java Spring Boot Framework and PostgresQL_
 
