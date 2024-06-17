@@ -6,6 +6,16 @@
 
 _Build with Java Spring Boot Framework and PostgresQL_
 
+## Endpoints
+
+- **GET** `/symbols`:
+  - Returning all available currencies.
+- **GET** `/exchanges/`:
+  - Returns all saved exchange rates
+- **GET** `/exchanges/{date}`:
+  - Return exchanges rates by date
+  - Date format: ***YYYY-MM-DD*** (***latest*** get current rates)
+
 ## Instructions for starting the project
 
 ### Prerequisites
@@ -37,3 +47,9 @@ _Build with Java Spring Boot Framework and PostgresQL_
    ```bash
    mvn spring-boot:run
    ```
+
+## Future features
+
+- Get exchange rates from the desired base (default: `USD`)
+- Currency conversion
+- Filter by currency
