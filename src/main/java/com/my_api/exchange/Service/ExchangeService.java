@@ -9,6 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Objects;
 
 @Service
 @AllArgsConstructor
@@ -19,11 +20,14 @@ public class ExchangeService {
         return exchangeRepository.findAll(Sort.by("date").ascending());
     }
 
-    public List<Exchange> findAllByDate(String date, Boolean latest) {
-        if (date != null) {
-            return exchangeRepository.findAllByDate(LocalDate.parse(date));
+    public List<Exchange> findAllByDate(String dateString) {
+        if (dateString.matches("^\\d{4}-\\d{2}-\\d{2}$")) {
+            return exchangeRepository.findAllByDate(LocalDate.parse(dateString));
         }
-        return exchangeRepository.findAllByDate(LocalDate.now());
+        else if (Objects.equals("latest", dateString)) {
+            exchangeRepository.findAllByDate(LocalDate.now());
+        }
+        throw new RuntimeException("Invalid date format");
     }
 
     @Transactional
